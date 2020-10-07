@@ -1,0 +1,479 @@
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "author": "Lorena Rivero del Paso",
+  "bytes": 162862480,
+  "count_of_rows": 529981,
+  "description": "Test",
+  "fiscalPeriod": {
+    "end": "2017-12-31",
+    "start": "2017-01-01"
+  },
+  "hash": "5a67cf68e21436f9e915b5b02b090973",
+  "model": {
+    "dimensions": {
+      "activity": {
+        "attributes": {
+          "ded_code": {
+            "parent": "prg_code",
+            "source": "ded_code",
+            "title": "ded_code"
+          },
+          "khotolbor": {
+            "labelfor": "prg_code",
+            "source": "khotolbor",
+            "title": "Хөтөлбөр"
+          },
+          "prg_code": {
+            "source": "prg_code",
+            "title": "prg_code"
+          },
+          "zoriulalt": {
+            "labelfor": "ded_code",
+            "source": "zoriulalt",
+            "title": "Зориулалт"
+          }
+        },
+        "dimensionType": "activity",
+        "primaryKey": [
+          "prg_code",
+          "ded_code"
+        ]
+      },
+      "administrative-classification": {
+        "attributes": {
+          "dans": {
+            "parent": "tez_code",
+            "source": "dans",
+            "title": "Данс"
+          },
+          "org_name": {
+            "labelfor": "dans",
+            "source": "org_name",
+            "title": "org_name"
+          },
+          "tez": {
+            "labelfor": "tez_code",
+            "source": "tez",
+            "title": "ТЕЗ"
+          },
+          "tez_code": {
+            "parent": "tosov_code",
+            "source": "tez_code",
+            "title": "ТЕЗ_code"
+          },
+          "tosov": {
+            "labelfor": "tosov_code",
+            "source": "tosov",
+            "title": "Төсөв"
+          },
+          "tosov_code": {
+            "source": "tosov_code",
+            "title": "Төсөв_Code"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "tosov_code",
+          "tez_code",
+          "dans"
+        ]
+      },
+      "date": {
+        "attributes": {
+          "year": {
+            "source": "year",
+            "title": "year"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "year"
+        ]
+      },
+      "economic-classification": {
+        "attributes": {
+          "item_code": {
+            "source": "item_code",
+            "title": "item_code"
+          },
+          "uzuulelt": {
+            "labelfor": "item_code",
+            "source": "uzuulelt",
+            "title": "Үзүүлэлт"
+          }
+        },
+        "classificationType": "economic",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "item_code"
+        ]
+      }
+    },
+    "measures": {
+      "tolovlogoo": {
+        "source": "tolovlogoo",
+        "title": " Төлөвлөгөө "
+      },
+      "tosviin_guitsetgeliin_tailan": {
+        "source": "tosviin_guitsetgeliin_tailan",
+        "title": " Төсвийн_гүйцэтгэлийн_тайлан "
+      }
+    }
+  },
+  "name": "mongolia_budget",
+  "owner": "38f2a72864f6414ccdf0f58a50663b9b",
+  "profile": "data-package",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "promise": {},
+  "regionCode": "as",
+  "resources": [
+    {
+      "bytes": 122146851,
+      "count_of_rows": 397485,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpihudkmqa/final/data/mongolia-2017.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "eb68428cad3902985f9851128329a8e3",
+      "mediatype": "text/csv",
+      "name": "mongolia-2017",
+      "path": "data/mongolia-2017.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "year",
+            "slug": "year",
+            "title": "year",
+            "type": "integer"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tosov_code",
+            "slug": "tosov_code",
+            "title": "Төсөв_Code",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tosov",
+            "slug": "tosov",
+            "title": "Төсөв",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tez_code",
+            "slug": "tez_code",
+            "title": "ТЕЗ_code",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tez",
+            "slug": "tez",
+            "title": "ТЕЗ",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "item_code",
+            "slug": "item_code",
+            "title": "item_code",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "uzuulelt",
+            "slug": "uzuulelt",
+            "title": "Үзүүлэлт",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "dans",
+            "slug": "dans",
+            "title": "Данс",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "org_name",
+            "slug": "org_name",
+            "title": "org_name",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:program:code",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "prg_code",
+            "slug": "prg_code",
+            "title": "prg_code",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:program:label",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "khotolbor",
+            "slug": "khotolbor",
+            "title": "Хөтөлбөр",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:subprogram:code",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "ded_code",
+            "slug": "ded_code",
+            "title": "ded_code",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:subprogram:label",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "zoriulalt",
+            "slug": "zoriulalt",
+            "title": "Зориулалт",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "tolovlogoo",
+            "slug": "tolovlogoo",
+            "title": " Төлөвлөгөө ",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "tosviin_guitsetgeliin_tailan",
+            "slug": "tosviin_guitsetgeliin_tailan",
+            "title": " Төсвийн_гүйцэтгэлийн_тайлан ",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "year",
+          "tosov_code",
+          "tez_code",
+          "item_code",
+          "dans",
+          "prg_code",
+          "ded_code"
+        ]
+      }
+    },
+    {
+      "bytes": 81431234,
+      "count_of_rows": 264990,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpihudkmqa/final/data/mongolia-2017__2017.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "eb68428cad3902985f9851128329a8e3",
+      "mediatype": "text/csv",
+      "name": "mongolia-2017__2017",
+      "path": "data/mongolia-2017__2017.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "year",
+            "slug": "year",
+            "title": "year",
+            "type": "integer"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tosov_code",
+            "slug": "tosov_code",
+            "title": "Төсөв_Code",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tosov",
+            "slug": "tosov",
+            "title": "Төсөв",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tez_code",
+            "slug": "tez_code",
+            "title": "ТЕЗ_code",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "tez",
+            "slug": "tez",
+            "title": "ТЕЗ",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "item_code",
+            "slug": "item_code",
+            "title": "item_code",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "uzuulelt",
+            "slug": "uzuulelt",
+            "title": "Үзүүлэлт",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "dans",
+            "slug": "dans",
+            "title": "Данс",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "org_name",
+            "slug": "org_name",
+            "title": "org_name",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:program:code",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "prg_code",
+            "slug": "prg_code",
+            "title": "prg_code",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:program:label",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "khotolbor",
+            "slug": "khotolbor",
+            "title": "Хөтөлбөр",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:subprogram:code",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "ded_code",
+            "slug": "ded_code",
+            "title": "ded_code",
+            "type": "string"
+          },
+          {
+            "columnType": "activity:generic:subprogram:label",
+            "conceptType": "activity",
+            "format": "default",
+            "name": "zoriulalt",
+            "slug": "zoriulalt",
+            "title": "Зориулалт",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "tolovlogoo",
+            "slug": "tolovlogoo",
+            "title": " Төлөвлөгөө ",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "tosviin_guitsetgeliin_tailan",
+            "slug": "tosviin_guitsetgeliin_tailan",
+            "title": " Төсвийн_гүйцэтгэлийн_тайлан ",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "year",
+          "tosov_code",
+          "tez_code",
+          "item_code",
+          "dans",
+          "prg_code",
+          "ded_code"
+        ]
+      }
+    }
+  ],
+  "revision": 0,
+  "title": "Mongolia Budget 2016-2017"
+}
