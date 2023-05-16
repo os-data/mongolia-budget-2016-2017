@@ -147,7 +147,7 @@
       "hash": "eb68428cad3902985f9851128329a8e3",
       "mediatype": "text/csv",
       "name": "mongolia-2017",
-      "path": "data/mongolia-2017.csv",
+      "path": "https://storage.openspending.org/mongolia-budget-2016-2017/mongolia-2017.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -318,7 +318,7 @@
       "hash": "eb68428cad3902985f9851128329a8e3",
       "mediatype": "text/csv",
       "name": "mongolia-2017__2017",
-      "path": "data/mongolia-2017__2017.csv",
+      "path": "https://storage.openspending.org/mongolia-budget-2016-2017/mongolia-2017.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
